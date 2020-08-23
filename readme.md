@@ -30,8 +30,10 @@ Esta configuração foi criada com o intuito de substituir completamente o hardw
    +-----------------------------+
    |         Unifi Switch        |
    +-----------------------------+
+          |                  |
           | Network          | Network                 
           | Internet         | IPTV
+          |                  |
    +----------------+     +-----------------------+
    |  Wifi AP / PC  |     |   Decodificador IPTV  |
    +----------------+     +-----------------------+
@@ -49,10 +51,10 @@ Esta configuração foi criada com o intuito de substituir completamente o hardw
 4. Unifi Controller inicializado e com todos os dispositivos adotados
 5. Ter criadas as seguintes networks: 
 
-        LAN (default VLAN 1 em 10.10.5.0/24)
-        Internet (VLAN 10 em 10.10.10.0/24)
-        IPTV (VLAN 20 em 10.10.20.0/24 com IGMP Snooping ativado)
-        VoIP (VLAN 30 em 10.10.30.0/24)
+        LAN (default VLAN 1)
+        Internet (VLAN 10)
+        IPTV (VLAN 20 com IGMP Snooping ativado)
+        VoIP (VLAN 30)
 6. Access Points, switches ou computadores conectados no switch com Port Profile All;
 7. Decodificador IPTV conectado no switch com Port Profile IPTV;
 
