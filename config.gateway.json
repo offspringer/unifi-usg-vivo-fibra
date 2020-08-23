@@ -215,7 +215,7 @@
                 },
                 "eth1.20": {
                     "alt-subnet": [
-                        "10.10.20.0/24"
+                        "0.0.0.0/0"
                     ],
                     "role": "downstream",
                     "threshold": "1"
