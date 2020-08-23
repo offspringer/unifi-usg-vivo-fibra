@@ -65,7 +65,7 @@ Esta configuração foi criada com o intuito de substituir completamente o hardw
 Pronto, já pode testar sua conexão com a Internet e o funcionamento da IPTV.
 
 ## Atualização automática de DNS
-Como os servidores DNS utilizados pela operadora podem mudar de tempos em tempos, utilize o script de execução automática para atualizá-los. Observação: o script precisa de uma network chamada IPTV para buscar as informações fazer a atualização.
+Como os servidores DNS utilizados pela operadora especificamente para IPTV podem mudar de tempos em tempos, utilize o script de execução automática para atualizá-los. Observação: o script precisa de uma network chamada IPTV para buscar as informações fazer a atualização.
 1. Copie o arquivo `update_iptv_dns.sh` para dentro de seu **Unifi Security Gateway** através de `ssh` (a pasta destino para upload deste arquivo é `/config/scripts/post-config.d/`)
 2. Torne-o executável atráves do comando `chmod +x /config/scripts/post-config.d/update_iptv_dns.sh`
 3. Execute-o com `sh /config/scripts/post-config.d/update_iptv_dns.sh`
