@@ -88,6 +88,9 @@ As causas mais comuns seriam:
 ### VoIP
 A configuração de VoIP não foi testada pois não possuo este serviço em minha assinatura;
 
+## Apêndice
+O arquivo `config.gateway-dump.json` deste repositório foi disponibilizado apenas para auxiliar na solução de problemas e representa a saída do comando `mca-ctrl -t dump-cfg` que foi executado no **Unifi Security Gateway** após as configurações estarem funcionando.
+
 ## Referências
 * Documentação do Vyatta: https://docs.huihoo.com/vyatta/6.3/
 * UniFi - USG Advanced Configuration Using config.gateway.json: https://help.ubnt.com/hc/en-us/articles/
