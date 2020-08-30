@@ -343,11 +343,17 @@
         },
         "task-scheduler": {
             "task": {
-                "iptv": {
+                "iptv-dns": {
                     "executable": {
                         "path": "/config/scripts/post-config.d/update_iptv_dns.sh"
                     },
-                    "interval": "60m"
+                    "interval": "12h"
+                },
+                "invalid-dhcp-client": {
+                    "executable": {
+                        "path": "/config/scripts/post-config.d/remove_invalid_dhcp_client.sh"
+                    },
+                    "interval": "24h"
                 }
             }
         }
