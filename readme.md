@@ -104,3 +104,4 @@ O arquivo `config.gateway-dump.json` deste repositório foi disponibilizado apen
 * UniFi - Explaining the config.properties File: https://help.ui.com/hc/en-us/articles/205146040-UniFi-Explaining-the-config-properties-File215458888-UniFi-How-to-further-customize-USG-configuration-with-config-gateway-json
 * Substituindo roteador Vivo Fibra por GPON TP-LINK TX-6610 + Mikrotik: https://forum.vivo.com.br/threads/112037-Substituindo-roteador-Vivo-Fibra-por-GPON-TP-LINK-TX-6610-Mikrotik
 * Como configurar um serviço SIP para utilização de VoIP: https://forum.vivo.com.br/threads/114368-Configura%C3%A7%C3%A3o-SIP
+* Ubiquity Unifi Security Gateway (USG) Configuration for KPN: https://github.com/basmeerman/unifi-usg-kpn
