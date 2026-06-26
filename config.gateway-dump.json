@@ -11,7 +11,7 @@
                                                 "200.161.71.0/24",
                                                 "177.16.0.0/16"
                                         ],
-                                        "description": "customized-IPTV"
+                                        "description": "customized-IPTV Unicast"
                                 },
                                 "5ef924fab9d5df03bc6f4b01": {
                                         "address": [
@@ -425,7 +425,12 @@
                                 "rule": {
                                         "2000": {
                                                 "action": "accept",
-                                                "description": "allow IPTV Multicast UDP",
+                                                "description": "Allow IPTV IGMP",
+                                                "protocol": "igmp"
+                                        },
+                                        "2001": {
+                                                "action": "accept",
+                                                "description": "Allow IPTV Multicast UDP",
                                                 "destination": {
                                                         "group": {
                                                                 "address-group": "5ef924fab9d5df03bc6f4b01"
@@ -437,12 +442,7 @@
                                                                 "address-group": "5ef91eccb9d5df03bc6f4aec"
                                                         }
                                                 }
-                                        },
-                                        "2001": {
-                                                "action": "accept",
-                                                "description": "allow IGMP",
-                                                "protocol": "igmp"
-                                        },
+                                        },                                        
                                         "3001": {
                                                 "action": "accept",
                                                 "description": "allow established/related sessions",
@@ -471,27 +471,12 @@
                                 "rule": {
                                         "2000": {
                                                 "action": "accept",
-                                                "description": "allow IPTV Multicast UDP",
-                                                "destination": {
-                                                        "group": {
-                                                                "address-group": "5ef924fab9d5df03bc6f4b01"
-                                                        }
-                                                },
-                                                "protocol": "udp",
-                                                "source": {
-                                                        "group": {
-                                                                "address-group": "5ef91eccb9d5df03bc6f4aec"
-                                                        }
-                                                }
+                                                "description": "Allow IPTV IGMP",
+                                                "protocol": "igmp"
                                         },
                                         "2001": {
                                                 "action": "accept",
-                                                "description": "allow IGMP",
-                                                "protocol": "igmp"
-                                        },
-                                        "2002": {
-                                                "action": "accept",
-                                                "description": "allow ICMP",
+                                                "description": "Allow ICMP (basic)",
                                                 "icmp": {
                                                         "type-name": "any"
                                                 },
@@ -766,14 +751,6 @@
                 "igmp-proxy": {
                         "disable-quickleave": "''",
                         "interface": {
-                                "eth0.10": {
-                                        "role": "disabled",
-                                        "threshold": "1"
-                                },
-                                "pppoe2": {
-                                        "role": "disabled",
-                                        "threshold": "1"
-                                },
                                 "eth0.20": {
                                         "alt-subnet": [
                                                 "0.0.0.0/0"
@@ -781,27 +758,11 @@
                                         "role": "upstream",
                                         "threshold": "1"
                                 },
-                                "eth0.30": {
-                                        "role": "disabled",
-                                        "threshold": "1"
-                                },
-                                "eth1": {
-                                        "role": "disabled",
-                                        "threshold": "1"
-                                },
-                                "eth1.10": {
-                                        "role": "disabled",
-                                        "threshold": "1"
-                                },
                                 "eth1.20": {
                                         "alt-subnet": [
                                                 "10.10.20.0/24"
                                         ],
                                         "role": "downstream",
-                                        "threshold": "1"
-                                },
-                                "eth1.30": {
-                                        "role": "disabled",
                                         "threshold": "1"
                                 }
                         }
@@ -820,7 +781,7 @@
                         "route": {
                                 "10.23.240.0/23": {
                                         "next-hop": {
-                                                "10.6.160.1": {
+                                                "10.209.160.1": {
                                                         "description": "VoIP",
                                                         "distance": "1"
                                                 }
@@ -828,7 +789,7 @@
                                 },
                                 "172.28.0.0/14": {
                                         "next-hop": {
-                                                "10.5.160.1": {
+                                                "10.141.128.1": {
                                                         "description": "IPTV",
                                                         "distance": "1"
                                                 }
@@ -836,7 +797,7 @@
                                 },
                                 "177.16.30.0/23": {
                                         "next-hop": {
-                                                "10.5.160.1": {
+                                                "10.141.128.1": {
                                                         "description": "IPTV",
                                                         "distance": "1"
                                                 }
@@ -844,7 +805,7 @@
                                 },
                                 "200.161.71.40/30": {
                                         "next-hop": {
-                                                "10.5.160.1": {
+                                                "10.141.128.1": {
                                                         "description": "IPTV",
                                                         "distance": "1"
                                                 }
@@ -852,7 +813,7 @@
                                 },
                                 "200.161.71.46/31": {
                                         "next-hop": {
-                                                "10.5.160.1": {
+                                                "10.141.128.1": {
                                                         "description": "IPTV",
                                                         "distance": "1"
                                                 }
@@ -860,7 +821,7 @@
                                 },
                                 "200.161.71.48/31": {
                                         "next-hop": {
-                                                "10.5.160.1": {
+                                                "10.141.128.1": {
                                                         "description": "IPTV",
                                                         "distance": "1"
                                                 }
@@ -868,7 +829,7 @@
                                 },
                                 "201.0.52.0/23": {
                                         "next-hop": {
-                                                "10.5.160.1": {
+                                                "10.141.128.1": {
                                                         "description": "IPTV",
                                                         "distance": "1"
                                                 }
@@ -881,7 +842,6 @@
                 "dhcp-server": {
                         "disabled": "false",
                         "global-parameters": [
-                                "option VCI code 60 = string;",
                                 "class &quot;denied&quot; { match substring (hardware, 1, 6); deny booting; } subclass &quot;denied&quot; e0:63:da:26:c2:47; subclass &quot;denied&quot; e0:63:da:26:c2:48; subclass &quot;denied&quot; e0:63:da:26:c2:49;"
                         ],
                         "hostfile-update": "enable",
@@ -970,6 +930,10 @@
                                 "except-interface": [
                                         "pppoe2"
                                 ],
+                                "name-server": [
+                                        "1.1.1.1",
+                                        "1.0.0.1"
+                                ],
                                 "options": [
                                         "ptr-record=1.5.10.10.in-addr.arpa,Router",
                                         "all-servers",
@@ -993,14 +957,14 @@
                 "nat": {
                         "rule": {
                                 "5000": {
-                                        "description": "MASQ corporate_network to IPTV",
+                                        "description": "MASQ IPTV",
                                         "log": "disable",
                                         "outbound-interface": "eth0.20",
                                         "protocol": "all",
                                         "type": "masquerade"
                                 },
                                 "5001": {
-                                        "description": "MASQ corporate_network to VoIP",
+                                        "description": "MASQ VoIP",
                                         "log": "disable",
                                         "outbound-interface": "eth0.30",
                                         "protocol": "all",
@@ -1089,11 +1053,12 @@
                         }
                 },
                 "ntp": {
-                        "server": [
-                                "200.160.7.193",
-                                "b.st1.ntp.br",
-                                "pool.ntp.br"
-                        ]
+                        "server": {
+                                "0.ubnt.pool.ntp.org": "''",
+                                "1.ubnt.pool.ntp.org": "''",
+                                "2.ubnt.pool.ntp.org": "''",
+                                "3.ubnt.pool.ntp.org": "''"
+                        }
                 },
                 "offload": {
                         "ipsec": "enable",
