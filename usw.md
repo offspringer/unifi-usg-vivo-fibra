@@ -27,11 +27,11 @@ Esta configuração foi criada com o intuito de otimizar o funcionamento do prot
     Multicast Control Frame Count.................. 8249
     IGMP header validation......................... Disabled
     Interfaces Enabled for IGMP Snooping........... None
-    VLANs enabled for IGMP snooping................ 1
+    VLANs enabled for IGMP snooping................ 20
     ```
 6. Visualize a configuração geral de IGMP específica para a VLAN 20 com a instrução `show igmpsnooping 20`. Verifique se a opção Fast Leave Mode aparece habilitada, como no exemplo a seguir:
     ```
-    VLAN ID........................................ 1
+    VLAN ID........................................ 20
     IGMP Snooping Admin Mode....................... Enabled
     Fast Leave Mode................................ Enabled
     Group Membership Interval (secs)............... 260
